@@ -1,0 +1,42 @@
+﻿@page
+@model Biblioteca.Pages.Role.IndexModel
+@{
+    ViewData["Title"] = "Rols";
+}
+
+<h1>Rols</h1>
+<hr />
+<a asp-page="Create" class="btn btn-success float-end">Create</a>
+<table class="table table-responsive table-striped table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>
+                @Html.DisplayNameFor(model => model.Rols[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rols[0].Description)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rols)
+        {
+            <tr class="text-center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.RolCode" class="btn btn-primary">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.RolCode" class="btn btn-primary">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.RolCode" class="btn btn-primary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
