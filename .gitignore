@@ -1,3 +1,10 @@
+bin/
+obj/
 .vs/
-/obj/
-/bin/Debug/
+.idea/
+*.suo
+*.user
+*.cache
+*.pdb
+*.exe
+*.dll
