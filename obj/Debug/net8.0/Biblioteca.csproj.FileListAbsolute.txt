@@ -170,3 +170,4 @@ C:\Users\melan\source\repos\Biblioteca\obj\Debug\net8.0\refint\Biblioteca.dll
 C:\Users\melan\source\repos\Biblioteca\obj\Debug\net8.0\Biblioteca.pdb
 C:\Users\melan\source\repos\Biblioteca\obj\Debug\net8.0\Biblioteca.genruntimeconfig.cache
 C:\Users\melan\source\repos\Biblioteca\obj\Debug\net8.0\ref\Biblioteca.dll
+C:\Users\melan\source\repos\Biblioteca\obj\Debug\net8.0\Biblioteca.sourcelink.json

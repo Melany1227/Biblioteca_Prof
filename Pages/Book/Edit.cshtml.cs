@@ -8,8 +8,8 @@ namespace Biblioteca.Pages.Book
 {
     public class EditModel : PageModel
     {
-        private readonly AppDBContext _context;  
-        private EditModel(AppDBContext context)
+        private readonly AppDBContext _context;
+        public EditModel(AppDBContext context)
         {
             _context = context;
         }
