@@ -4,45 +4,86 @@
     ViewData["Title"] = "Books";
 }
 
+<style>
+    body {
+        background-color: #FFFCF0;
+        color: #171F1E;
+    }
+
+    h1 {
+        color: #4E6161;
+    }
+
+    .btn-custom {
+        background-color: #4E6161;
+        color: #FFFCF0;
+        border: none;
+        border-radius: 6px;
+    }
+
+        .btn-custom:hover {
+            background-color: #3e4f4f;
+            color: #ffffff;
+        }
+
+    .table-container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .table th {
+        background-color: #171F1E;
+        color: #FFFCF0;
+        text-align: center;
+    }
+
+    .table td {
+        color: #171F1E;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #E4E8E4;
+    }
+
+    hr {
+        border-top: 2px solid #4E6161;
+    }
+</style>
+
 <h1>Books</h1>
 <hr />
-<a asp-page="Create" class="btn btn-success float-end">Create</a>
-<table class="table table-responsive table-striped table-hover align-middle">
-    <thead>
-        <tr class="text-center">
-            <th>
-                @Html.DisplayNameFor(model => model.Books[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Books[0].Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Books[0].Gender)
-            </th>
-            <th>
-                Actions
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Books)
-        {
-            <tr class="text-center">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
-                </td>
+
+<div class="mb-3 text-end">
+    <a asp-page="Create" class="btn btn-custom">Create</a>
+</div>
+
+<div class="table-container">
+    <table class="table table-responsive table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Books[0].Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Books[0].Author)</th>
+                <th>@Html.DisplayNameFor(model => model.Books[0].Gender)</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Books)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-custom me-1">Edit</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-custom">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

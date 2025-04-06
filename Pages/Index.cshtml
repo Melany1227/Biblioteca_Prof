@@ -4,7 +4,38 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<style>
+    body {
+        background-color: #FFFCF0;
+        color: #171F1E;
+    }
+
+    .welcome-container {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+
+    h1.display-4 {
+        color: #4E6161;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #4E6161;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: #2f3939;
+    }
+</style>
+
+<div class="welcome-container">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">building Web apps with ASP.NET Core</a>.</p>
 </div>

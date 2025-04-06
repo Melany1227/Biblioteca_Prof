@@ -3,40 +3,92 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<h1>Edit</h1>
+
+<style>
+    body {
+        background-color: #FFFCF0;
+        color: #171F1E;
+    }
+
+    h1 {
+        color: #4E6161;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        color: #4E6161;
+        font-weight: 500;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-custom {
+        background-color: #4E6161;
+        color: #FFFCF0;
+        border: none;
+    }
+
+        .btn-custom:hover {
+            background-color: #3e4f4f;
+            color: #ffffff;
+        }
+
+    .btn-back {
+        background-color: #171F1E;
+        color: #FFFCF0;
+        border: none;
+    }
+
+        .btn-back:hover {
+            background-color: #2b3432;
+            color: #ffffff;
+        }
+
+    form {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+
+<h1>Edit Book</h1>
 <hr />
 
 <div class="row">
-    <div class="col-4">
+    <div class="col-12 col-md-6">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Books.Id" />  
-        
-            <div class="form-group">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="Books.Id" />
+
+            <div class="form-group mb-3">
                 <label asp-for="Books.Title" class="control-label"></label>
-                <input asp-for="Books.Title" class="form-control" />    
+                <input asp-for="Books.Title" class="form-control" />
                 <span asp-validation-for="Books.Title" class="text-danger"></span>
             </div>
 
-            <div class="form-group mt-2">
+            <div class="form-group mb-3">
                 <label asp-for="Books.Author" class="control-label"></label>
                 <input asp-for="Books.Author" class="form-control" />
                 <span asp-validation-for="Books.Author" class="text-danger"></span>
             </div>
 
-            <div class="form-group mt-2">
+            <div class="form-group mb-3">
                 <label asp-for="Books.Gender" class="control-label"></label>
                 <input asp-for="Books.Gender" class="form-control" />
                 <span asp-validation-for="Books.Gender" class="text-danger"></span>
             </div>
 
-            <div class="form-group mt-2">
-                <a asp-page="./Index" class="btn btn-danger">Back</a>
-                <input type="submit" value="Update" class="btn btn-primary" />
+            <div class="form-group mt-4">
+                <a asp-page="./Index" class="btn btn-back me-2">Back</a>
+                <input type="submit" value="Update" class="btn btn-custom" />
             </div>
-        
         </form>
-
     </div>
 </div>
 

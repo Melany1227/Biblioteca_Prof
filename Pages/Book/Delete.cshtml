@@ -1,0 +1,94 @@
+﻿@page
+@model Biblioteca.Pages.Book.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    body {
+        background-color: #FFFCF0;
+        color: #171F1E;
+    }
+
+    h3 {
+        color: #4E6161;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    dl {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    dt {
+        color: #4E6161;
+        font-weight: 600;
+    }
+
+    .btn-custom {
+        background-color: #4E6161;
+        color: #FFFCF0;
+        border: none;
+    }
+
+        .btn-custom:hover {
+            background-color: #3e4f4f;
+            color: #ffffff;
+        }
+
+    .btn-back {
+        background-color: #171F1E;
+        color: #FFFCF0;
+        border: none;
+    }
+
+        .btn-back:hover {
+            background-color: #2b3432;
+            color: #ffffff;
+        }
+
+    form {
+        margin-top: 20px;
+    }
+
+    .btn + .btn {
+        margin-left: 10px;
+    }
+</style>
+
+
+<h3>Are you sure that you want to delete this book?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books.Title)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books.Title)
+        </dd>
+
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books.Author)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books.Author)
+        </dd>
+
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books.Gender)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books.Gender)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Books.Id" />
+        <a asp-page="./Index" class="btn btn-back">Back</a>
+        <input type="submit" value="Delete" class="btn btn-custom" />
+    </form>
+</div>
